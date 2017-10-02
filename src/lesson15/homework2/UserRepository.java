@@ -113,19 +113,19 @@ public class UserRepository {
         return null;
     }
 
-    public User save(User user) {
-        if (users != null) {
-            if (user.equals(findById(user.getId()))$$)
-                return null;
-            for (int i = 0; i < users.length; i++) {
-                if (users[i] == null) {
-                    users[i] = user;
-                    return user;
-                }
-            }
-        }
-        return null;
-    }
+//    public User save(User user) {
+//        if (users != null) {
+//            if (user.equals(findById(user.getId()))$$)
+//                return null;
+//            for (int i = 0; i < users.length; i++) {
+//                if (users[i] == null) {
+//                    users[i] = user;
+//                    return user;
+//                }
+//            }
+//        }
+//        return null;
+//    }
 
     public User findById(long id) {
 

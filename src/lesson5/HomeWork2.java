@@ -14,7 +14,10 @@ public class HomeWork2 {
 
     public static int withdraw(String[] clients, int[] balances, String client, int amount) {
         int index = findClientIndexByName(clients, client);
-        if (((long)balances[index] - (long)amount) < 0 ) {
+        if (index < 0)
+            return -1;
+
+        if (((long) balances[index] - (long) amount) < 0) {
             return -1;
         } else {
             balances[index] -= amount;
@@ -22,7 +25,7 @@ public class HomeWork2 {
         }
     }
 
-    static int findClientIndexByName(String[] clients, String client) {
+    public static int findClientIndexByName(String[] clients, String client) {
         int clientIndex = 0;
 
         for (String cl : clients) {
@@ -31,6 +34,6 @@ public class HomeWork2 {
             }
             clientIndex++;
         }
-        return clientIndex;
+        return clientIndex > clients.length - 1 ? -1 : clientIndex;
     }
 }

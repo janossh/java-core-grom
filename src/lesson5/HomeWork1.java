@@ -12,15 +12,15 @@ public class HomeWork1 {
 
     }
 
-    static int[] sortAscending(int[] array) {
+    public static int[] sortAscending(int[] array) {
 
         Arrays.sort(array);
         return array;
     }
 
-    static int[] sortDescending(int[] array) {
+    public static int[] sortDescending(int[] array) {
         Arrays.sort(array);
-        int[] newArray = new int[11];
+        int[] newArray = new int[array.length];
         for (int ii = 0; ii < array.length; ii++) {
             newArray[array.length-ii-1] = array[ii];
         }
