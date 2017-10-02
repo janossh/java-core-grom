@@ -1,8 +1,13 @@
 package lesson13;
 
 import lesson4.*;
+import lesson6.Car;
+import lesson6.Order;
+import lesson7.DemoHomeWork;
+import lesson8.Adder;
 
 import java.util.Arrays;
+import java.util.Date;
 
 public class Demo {
     public static void main(String[] args) {
@@ -89,6 +94,41 @@ public class Demo {
         System.out.println(lesson5.HomeWork2.findClientIndexByName(new String[]{"Jack", "Ann", "Denis", "Andrey", "Nikolay", "Irina", "John"}, "Andrey"));
         System.out.println(lesson5.HomeWork2.findClientIndexByName(new String[]{"Jack", "Ann", "Denis", "Andrey", "Nikolay", "Irina", "John"}, "Phil"));
         System.out.println(lesson5.HomeWork2.findClientIndexByName(new String[]{"Jack", "Ann", "Denis", "Andrey", "Nikolay", "Irina", "John"},  "Jack" ));
+
+        System.out.println();
+        System.out.println("lesson6.Order");
+
+        Order order = new Order(5000, new Date(), false, null, "Kiev", "Ukraine", "Sold");
+        order.confirmOrder();
+        System.out.println(order.toString());
+
+        order = new Order(Integer.MAX_VALUE, null, false, null, "Kiev", "Ukraine", "Sold");
+        order.confirmOrder();
+        System.out.println(order.toString());
+
+        order = new Order(Integer.MAX_VALUE, new Date(), false, new Date(), "Kiev", "Ukraine", "Sold");
+        order.confirmOrder();
+        System.out.println(order.toString());
+
+        System.out.println();
+        System.out.println("lesson7.DemoHomeWork");
+
+        DemoHomeWork demoHomeWork = new DemoHomeWork();
+        System.out.println(demoHomeWork.createOrder().toString());
+        System.out.println(demoHomeWork.createOrderAndCallMethods().toString());
+
+        System.out.println();
+        System.out.println("lesson8.Adder");
+
+        System.out.println(Adder.add(Integer.MAX_VALUE, 1));
+        System.out.println(Adder.add(Integer.MAX_VALUE, Integer.MIN_VALUE));
+        System.out.println(Adder.add(Integer.MAX_VALUE, Integer.MAX_VALUE));
+
+        System.out.println("lesson8.Arithmetic");
+        System.out.println(Adder.check(new int[] {11, 12, 10, 5, 4, 44, 94, 44, 11, 10, 11}));
+        System.out.println(Adder.check(new int[] {Integer.MIN_VALUE, 0, 0, 0, 0, 0, 11, Integer.MAX_VALUE}));
+        System.out.println(Adder.check(new int[] {Integer.MAX_VALUE, 12, 10, 5, 4, 44, 94, 44, Integer.MAX_VALUE, 10, 11}));
+
 
 
     }

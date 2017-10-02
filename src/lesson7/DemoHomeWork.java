@@ -6,12 +6,12 @@ import java.util.Date;
 
 public class DemoHomeWork {
 
-    Order createOrder() {
+    public Order createOrder() {
         Order newOrder = new Order(100, new Date(), false, null, "Dnepr", "Ukraine", "Buy");
         return newOrder;
     }
 
-    Order createOrderAndCallMethods() {
+    public Order createOrderAndCallMethods() {
         Order newOrder = new Order(100, new Date(), true, new Date(), "Kiev", "Ukraine", "SomeValue");
         newOrder.confirmOrder();
         newOrder.checkPrice();

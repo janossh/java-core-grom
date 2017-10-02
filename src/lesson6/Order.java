@@ -47,4 +47,19 @@ public class Order {
         else
             return false;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", price=" + price +
+                ", dateCreated=" + dateCreated +
+                ", isConfirmed=" + isConfirmed +
+                ", confirmed=" + confirmed +
+                ", dateConfirmed=" + dateConfirmed +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }

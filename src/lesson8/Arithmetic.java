@@ -3,7 +3,7 @@ package lesson8;
 public class Arithmetic {
 
 
-    boolean check(int[] array) {
+    public static boolean check(int[] array) {
         int maxEl = array[0];
         int minEl = array[0];
         for (int el : array) {

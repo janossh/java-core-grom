@@ -26,15 +26,15 @@ public class User {
 
     }
 
-    void logIn(){
+   public void logIn(){
         lastActiveDate = new Date();
     }
 
-    void isActive(boolean status) {
+   public void isActive(boolean status) {
         isActive = status;
     }
 
-    void increaseAge(){
+   public void increaseAge(){
         age++;
     }
 }
