@@ -50,7 +50,7 @@ public class UserRepository {
 
             aa = 0;
 
-            for (int i = 0; i < userIds.length; i++) {
+            for (int i = 0; i < users.length; i++) {
                 if (users[i] != null) {
                     userIds[aa] = users[i].getId();
                     aa++;

@@ -1,5 +1,8 @@
 package lesson13;
 
+import lesson10.Customer;
+import lesson10.ElectronicsOrder;
+import lesson10.FurnitureOrder;
 import lesson4.*;
 import lesson6.Car;
 import lesson6.Order;
@@ -131,6 +134,7 @@ public class Demo {
         System.out.println(Adder.check(new int[] {Integer.MIN_VALUE, 0, 0, 0, 0, 0, 11, Integer.MAX_VALUE}));
         System.out.println(Adder.check(new int[] {Integer.MAX_VALUE, 12, 10, 5, 4, 44, 94, 44, Integer.MAX_VALUE, 10, 11}));
 
+        System.out.println();
         System.out.println("lesson9.UserRepository");
 
         User user0 = new User(100,"Ivan0", "0");
@@ -155,9 +159,70 @@ public class Demo {
 
         System.out.println(Arrays.toString(userRepository1.getUserNames()));//find mistake
 
+        System.out.println(Arrays.toString(userRepository1.getUserIds()));//same mistake
+
+        System.out.println(userRepository1.getUserNameById(100));
+        System.out.println(userRepository1.getUserNameById(101));
+        System.out.println(userRepository1.getUserNameById(102));
+
+        System.out.println(userRepository1.getUserByName("Ivan0"));
+        System.out.println(userRepository1.getUserByName("Ivan1"));
+
+        System.out.println(userRepository1.getUserById(100));
+        System.out.println(userRepository1.getUserById(101));
+
+        System.out.println(userRepository1.getUserBySessionId("0"));
+        System.out.println(userRepository1.getUserBySessionId("1"));
+
+        System.out.println(userRepository1.findById(100));
+        System.out.println(userRepository1.findById(101));
+
+        user0.setSessionId("45");
+        userRepository1.update(user0);
+        userRepository1.update(user3);
+        System.out.println(Arrays.deepToString(userRepository1.getUsers()));
+
+        userRepository1.delete(100);
+        userRepository1.delete(101);
+        System.out.println(Arrays.deepToString(userRepository1.getUsers()));
 
 
+        System.out.println();
+        System.out.println("lesson10");
 
+        ElectronicsOrder electronicsOrder1 = new ElectronicsOrder("Goods1", new Date(),  "Днепр", 600, new Customer("Tamara", "Днепр", "Женский"), 12);
+        ElectronicsOrder electronicsOrder2 = new ElectronicsOrder("Goods2", new Date(),  "Одесса", 1600, new Customer("Вова", "Одесса", "Мужской"), 12);
+
+        FurnitureOrder furnitureOrder1 = new FurnitureOrder("Goods1", new Date(),  "Днепр", 600, new Customer("Tamara", "Днепр", "Женский"), "12");
+        FurnitureOrder furnitureOrder2 = new FurnitureOrder("Goods2", new Date(),  "Львов", 400, new Customer("Вова", "Львов", "Мужской"), "12");
+
+        electronicsOrder1.validateOrder();
+        System.out.println(electronicsOrder1);
+        electronicsOrder1.calculatePrice();
+        System.out.println(electronicsOrder1);
+        electronicsOrder1.confirmShipping();
+        System.out.println(electronicsOrder1);
+
+        electronicsOrder2.validateOrder();
+        System.out.println(electronicsOrder2);
+        electronicsOrder2.calculatePrice();
+        System.out.println(electronicsOrder2);
+        electronicsOrder2.confirmShipping();
+        System.out.println(electronicsOrder2);
+
+        furnitureOrder1.validateOrder();
+        System.out.println(furnitureOrder1);
+        furnitureOrder1.calculatePrice();
+        System.out.println(furnitureOrder1);
+        furnitureOrder1.confirmShipping();
+        System.out.println(furnitureOrder1);
+
+        furnitureOrder2.validateOrder();
+        System.out.println(furnitureOrder1);
+        furnitureOrder2.calculatePrice();
+        System.out.println(furnitureOrder1);
+        furnitureOrder2.confirmShipping();
+        System.out.println(furnitureOrder1);
     }
 
 }

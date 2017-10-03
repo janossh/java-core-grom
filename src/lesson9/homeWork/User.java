@@ -12,6 +12,10 @@ public class User {
         this.sessionId = sessionId;
     }
 
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
+
     public long getId() {
         return id;
     }
@@ -22,5 +26,14 @@ public class User {
 
     public String getSessionId() {
         return sessionId;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", sessionId='" + sessionId + '\'' +
+                '}';
     }
 }

@@ -25,7 +25,7 @@ public abstract class Order {
     abstract public void validateOrder();
     abstract public void calculatePrice();
 
-    void confirmShipping(){
+    public void confirmShipping(){
         if (dateShipped==null && dateConfirmed!=null)
             dateShipped = new Date();
         System.out.println(itemName + " date shipped -- " + dateShipped);

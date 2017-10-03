@@ -13,6 +13,15 @@ public class ElectronicsOrder extends Order {
     }
 
     @Override
+    public String toString() {
+        return "ElectronicsOrder{" +
+                "guaranteeMonths=" + guaranteeMonths +
+                ", shipingPrice=" + shipingPrice +
+                ", discountPrice=" + discountPrice +
+                '}';
+    }
+
+    @Override
     public void validateOrder() {
         if (getDateConfirmed() == null)
             if (getCustomerOwned().getCity() == "Киев" || getCustomerOwned().getCity() == "Одесса" || getCustomerOwned().getCity() == "Днепр" || getCustomerOwned().getCity() == "Харьков")
