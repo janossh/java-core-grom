@@ -17,7 +17,7 @@ public class TripAdvisorAPI implements API{
         count = 0;
         for (Room el : rooms)
             if (el != null)
-                if (el.dateAvailableFrom.before(new Date()))
+               // if (el.dateAvailableFrom!=null&&el.dateAvailableFrom.before(new Date()))
                     if (el.getPrice() == price)
                         if (el.getPersons() >= persons-1&&el.getPersons() <= persons+1)
                             if (el.getCityName() == city)
@@ -28,7 +28,7 @@ public class TripAdvisorAPI implements API{
         count = 0;
         for (Room el : rooms)
             if (el != null)
-                if (el.dateAvailableFrom.before(new Date()))
+                //if (el.dateAvailableFrom!=null&&el.dateAvailableFrom.before(new Date()))
                     if (el.getPrice()== price)
                         if (el.getPersons() >= persons-1&&el.getPersons() <= persons+1)
                             if (el.getCityName() == city)

@@ -17,7 +17,7 @@ public class BookingComAPI implements API {
         count = 0;
         for (Room el : rooms)
             if (el != null)
-                if (el.dateAvailableFrom.before(new Date()))
+                //if (el.dateAvailableFrom!=null&&el.dateAvailableFrom.before(new Date()))
                     if (el.getPrice() <= price + 100 && el.getPrice() >= price - 100)
                         if (el.getPersons() == persons)
                             if (el.getCityName() == city)
@@ -28,7 +28,7 @@ public class BookingComAPI implements API {
         count = 0;
         for (Room el : rooms)
             if (el != null)
-                if (el.dateAvailableFrom.before(new Date()))
+                //if (el.dateAvailableFrom!=null&&el.dateAvailableFrom.before(new Date()))
                     if (el.getPrice() <= price + 100 && el.getPrice() >= price - 100)
                         if (el.getPersons() == persons)
                             if (el.getCityName() == city)
