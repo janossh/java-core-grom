@@ -5,6 +5,8 @@ import lesson6.Car;
 import lesson6.Order;
 import lesson7.DemoHomeWork;
 import lesson8.Adder;
+import lesson9.homeWork.User;
+import lesson9.homeWork.UserRepository;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -128,6 +130,31 @@ public class Demo {
         System.out.println(Adder.check(new int[] {11, 12, 10, 5, 4, 44, 94, 44, 11, 10, 11}));
         System.out.println(Adder.check(new int[] {Integer.MIN_VALUE, 0, 0, 0, 0, 0, 11, Integer.MAX_VALUE}));
         System.out.println(Adder.check(new int[] {Integer.MAX_VALUE, 12, 10, 5, 4, 44, 94, 44, Integer.MAX_VALUE, 10, 11}));
+
+        System.out.println("lesson9.UserRepository");
+
+        User user0 = new User(100,"Ivan0", "0");
+        User user1 = new User(101,"Ivan1", "1");
+        User user2 = new User(102,"Ivan2", "2");
+        User user3 = new User(103,"Ivan3", "3");
+
+        User[] users = new User[] {user0, null, user2};
+
+        UserRepository userRepository = new UserRepository(new User[3]);
+        System.out.println(Arrays.deepToString(userRepository.getUsers()));
+
+        UserRepository userRepository1 = new UserRepository(users);
+        System.out.println(Arrays.deepToString(userRepository1.getUsers()));
+
+        userRepository.save(user2);
+        userRepository.save(user1);
+        userRepository.save(null);
+        userRepository.save(user0);
+        userRepository.save(user3);
+        System.out.println(Arrays.deepToString(userRepository.getUsers()));
+
+        System.out.println(Arrays.toString(userRepository1.getUserNames()));//find mistake
+
 
 
 
