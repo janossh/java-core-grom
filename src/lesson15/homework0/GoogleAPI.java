@@ -1,6 +1,6 @@
 package lesson15.homework0;
 
-public class GoogleAPI implements lesson15.homework0.API {
+public class GoogleAPI implements API {
     private Room[] rooms;
     private Room[] findedRooms;
     private int count;
