@@ -11,29 +11,21 @@ public class GoogleAPI implements API {
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-
+        Room etalonRoom = new Room(1001, price, persons, null, city, hotel);
         count = 0;
         for (Room el : rooms)
             if (el != null)
-                //if (el.dateAvailableFrom!=null&&el.dateAvailableFrom.before(new Date()))
-                    if (el.getPrice() == price)
-                        if (el.getPersons() == persons)
-                            if (el.getCityName() == city)
-                                if (el.getHotelName() == hotel)
-                                    count++;
+                if (el.equals(etalonRoom) && el.hashCode() == etalonRoom.hashCode())
+                    count++;
 
         findedRooms = new Room[count];
         count = 0;
         for (Room el : rooms)
             if (el != null)
-                //if (el.dateAvailableFrom!=null&&el.dateAvailableFrom.before(new Date()))
-                    if (el.getPrice()== price)
-                        if (el.getPersons() == persons)
-                            if (el.getCityName() == city)
-                                if (el.getHotelName() == hotel) {
-                                    findedRooms[count] = el;
-                                    count++;
-                                }
+                if (el.equals(etalonRoom) && el.hashCode() == etalonRoom.hashCode()) {
+                    findedRooms[count] = el;
+                    count++;
+                }
         return findedRooms;
     }
 
@@ -43,16 +35,16 @@ public class GoogleAPI implements API {
         for (Room el : rooms)
             if (el != null)
 //                if (el.dateAvailableFrom.before(new Date()))
-                    count++;
+                count++;
 
         findedRooms = new Room[count];
         count = 0;
         for (Room el : rooms) {
-            if (el != null){
+            if (el != null) {
 //                if (el.dateAvailableFrom.before(new Date())) {
-                    findedRooms[count] = el;
-                    count++;
-                }
+                findedRooms[count] = el;
+                count++;
+            }
         }
         return findedRooms;
     }
