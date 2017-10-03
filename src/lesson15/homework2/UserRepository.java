@@ -13,8 +13,6 @@ public class UserRepository {
 
     public String[] getUserNames() {
         if (users != null) {
-
-
             int aa = 0;
             for (int i = 0; i < users.length; i++) {
                 if (users[i] != null) {
@@ -26,7 +24,7 @@ public class UserRepository {
 
             aa = 0;
 
-            for (int i = 0; i < userNames.length; i++) {
+            for (int i = 0; i < users.length; i++) {
                 if (users[i] != null) {
                     userNames[aa] = users[i].getName();
                     aa++;
@@ -52,7 +50,7 @@ public class UserRepository {
 
             aa = 0;
 
-            for (int i = 0; i < userIds.length; i++) {
+            for (int i = 0; i < users.length; i++) {
                 if (users[i] != null) {
                     userIds[aa] = users[i].getId();
                     aa++;
@@ -113,19 +111,19 @@ public class UserRepository {
         return null;
     }
 
-//    public User save(User user) {
-//        if (users != null) {
-//            if (user.equals(findById(user.getId()))$$)
-//                return null;
-//            for (int i = 0; i < users.length; i++) {
-//                if (users[i] == null) {
-//                    users[i] = user;
-//                    return user;
-//                }
-//            }
-//        }
-//        return null;
-//    }
+    public User save(User user) {
+        if (user != null) {
+            if (user.equals(user))
+                return null;
+            for (int i = 0; i < users.length; i++) {
+                if (users[i] == null) {
+                    users[i] = user;
+                    return user;
+                }
+            }
+        }
+        return null;
+    }
 
     public User findById(long id) {
 
@@ -166,7 +164,7 @@ public class UserRepository {
                 if (id == myUser.getId()) {
                     for (int i = 0; i < users.length; i++) {
                         if (users[i] != null)
-                            if (users[i].getId() == id) {
+                            if (users[i].equals(myUser)) {
                                 users[i] = null;
                             }
                     }
