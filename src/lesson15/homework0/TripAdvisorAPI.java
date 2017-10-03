@@ -1,7 +1,5 @@
 package lesson15.homework0;
 
-import lesson11.homework.API;
-
 public class TripAdvisorAPI implements API{
     private Room[] rooms;
     private Room[] findedRooms;
