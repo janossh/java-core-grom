@@ -15,14 +15,14 @@ public class GoogleAPI implements API {
         count = 0;
         for (Room el : rooms)
             if (el != null)
-                if (el.equals(etalonRoom) && el.hashCode() == etalonRoom.hashCode())
+                if (el.equals(etalonRoom) )
                     count++;
 
         findedRooms = new Room[count];
         count = 0;
         for (Room el : rooms)
             if (el != null)
-                if (el.equals(etalonRoom) && el.hashCode() == etalonRoom.hashCode()) {
+                if (el.equals(etalonRoom) ) {
                     findedRooms[count] = el;
                     count++;
                 }
