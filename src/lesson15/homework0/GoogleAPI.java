@@ -14,18 +14,20 @@ public class GoogleAPI implements API {
         Room etalonRoom = new Room(1001, price, persons, null, city, hotel);
         count = 0;
         for (Room el : rooms){
-            if (el != null)
+            if (el != null){
                 if (el.equals(etalonRoom) )
                     count++;
+            }
         }
         findedRooms = new Room[count];
         count = 0;
         for (Room el : rooms){
-            if (el != null)
+            if (el != null){
                 if (el.equals(etalonRoom) ) {
                     findedRooms[count] = el;
                     count++;
                 }
+            }
         }
         return findedRooms;
     }
