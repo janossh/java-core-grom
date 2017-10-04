@@ -20,12 +20,13 @@ public class GoogleAPI implements API {
         }
         findedRooms = new Room[count];
         count = 0;
-        for (Room el : rooms)
+        for (Room el : rooms){
             if (el != null)
                 if (el.equals(etalonRoom) ) {
                     findedRooms[count] = el;
                     count++;
                 }
+        }
         return findedRooms;
     }
 
