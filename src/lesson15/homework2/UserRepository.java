@@ -113,10 +113,8 @@ public class UserRepository {
 
     public User save(User user) {
         if (user != null) {
-            if (user.equals(user))
-                return null;
-            for (int i = 0; i < users.length; i++) {
-                if (users[i] == null) {
+           for (int i = 0; i < users.length; i++) {
+                if (users[i] == null && users[i].equals(user))) {
                     users[i] = user;
                     return user;
                 }
@@ -146,7 +144,7 @@ public class UserRepository {
                     if (user.getId() == myUser.getId()) {
                         for (int i = 0; i < users.length; i++) {
                             if (users[i] != null)
-                                if (users[i].getId() == user.getId()) {
+                                if (users[i]equals(user)) {
                                     users[i] = user;
                                 }
                         }
