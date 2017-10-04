@@ -114,7 +114,7 @@ public class UserRepository {
     public User save(User user) {
         if (user != null) {
            for (int i = 0; i < users.length; i++) {
-                if (users[i] == null && users[i].equals(user))) {
+                if (users[i] == null && users[i].equals(user)) {
                     users[i] = user;
                     return user;
                 }
